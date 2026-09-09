@@ -24,7 +24,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Inter:wght@400;500&family=Poppins:wght@500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;1,400;1,500&family=Cormorant:wght@600&family=Inter:wght@300;400;500&family=Poppins:wght@500;600&display=swap">
 <link rel="stylesheet" href="assets/site.css">
 
 <style>
@@ -32,7 +32,9 @@
   .hero-actions{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:28px}
   .text-link{font:600 14px var(--caps);letter-spacing:.18em;text-transform:uppercase;color:var(--ink);padding-bottom:6px;border-bottom:1px solid rgba(255,255,255,.35);transition:border-color .4s var(--ease),color .4s var(--ease)}
   .text-link:hover{color:var(--pink);border-bottom-color:var(--pink)}
-  .about-copy .statement+.statement{margin-top:22px}
+  .about-copy .statement+.statement{margin-top:24px}
+  .about-copy .about-hero{font-family:'Cormorant','Cormorant Garamond',Georgia,serif;font-weight:600;font-style:normal;font-size:clamp(30px,3.2vw,48px);line-height:1.25;letter-spacing:.01em;color:var(--ink)}
+  .about-copy .about-body{font-family:Inter,system-ui,sans-serif;font-weight:300;font-style:normal;font-size:clamp(19px,1.7vw,26px);line-height:1.6;letter-spacing:.015em;color:var(--ink-60)}
   .li-body{flex:1}
   .li-body .t{display:block}
   .li-desc{margin-top:12px;font-size:16px;line-height:1.55;max-width:56ch}
@@ -105,13 +107,13 @@
     <div class="wrap">
       <p class="label reveal">About Heartline</p>
       <div class="about-copy reveal-group maxw">
-        <p class="statement reveal">We give you the platform to voice your story.</p>
-        <p class="statement reveal">Raw. Real. Unfiltered.</p>
-        <p class="statement reveal">And wield it into a cinematic masterpiece that immerses the viewer into your world.</p>
-        <p class="statement reveal">We capture your journey: the milestones, the ups and downs, wins and losses; your faith, your love, your truth, your creations, and everything in between.</p>
-        <p class="statement reveal">Showcasing your strength in vulnerability.</p>
-        <p class="statement reveal">We reveal it all in one beautiful film.</p>
-        <p class="statement reveal">With YOU at the heart of it.</p>
+        <p class="statement about-hero reveal">We give you the platform to voice your story.</p>
+        <p class="statement about-hero reveal">Raw. Real. Unfiltered.</p>
+        <p class="statement about-body reveal">And wield it into a cinematic masterpiece that immerses the viewer into your world.</p>
+        <p class="statement about-body reveal">We capture your journey: the milestones, the ups and downs, wins and losses; your faith, your love, your truth, your creations, and everything in between.</p>
+        <p class="statement about-body reveal">Showcasing your strength in vulnerability.</p>
+        <p class="statement about-body reveal">We reveal it all in one beautiful film.</p>
+        <p class="statement about-hero reveal">With YOU at the heart of it.</p>
       </div>
       <p class="mt-2 reveal"><a class="text-link" href="/about">About Rania</a></p>
     </div>
