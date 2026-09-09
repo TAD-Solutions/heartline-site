@@ -1,6 +1,6 @@
 # Heartline Productions website
 
-This repo is the live website at https://heartline.productions. It is static HTML with no build step. Pushing to `main` deploys to production on Vercel within about a minute.
+This repo is the live website at https://heartline.productions. It is static HTML with no build step. URLs are clean: `about.html` is served at /about (vercel.json cleanUrls), and links between pages are written as `/about`, never `about.html`. Pushing to `main` deploys to production on Vercel within about a minute.
 
 ## Pages
 | Page | File |
@@ -13,13 +13,13 @@ This repo is the live website at https://heartline.productions. It is static HTM
 | Testimonials | `testimonials.html` |
 | Contact | `contact.html` |
 
-`index.html` stays the coming-soon page on purpose. The full site is reached at /home.html until Rania decides to switch the front page; when she does, copy `home.html` over `index.html` and update the links from `home.html` to `index.html` in every page.
+`index.html` stays the coming-soon page on purpose. The full site is reached at /home until Rania decides to switch the front page; when she does, copy `home.html` over `index.html` and update the links from `home.html` to `index.html` in every page.
 
 ## How to work here
 - Edit copy directly in the page files. Text sits between tags such as `<p>` and `</p>`; change the words, not the tags.
 - Blocks marked `<!-- DRAFT: replace -->` are placeholder copy. Replace them with Rania's words and delete the comment.
 - Commit with a plain one-line message and push to `main`. There is no build, no test suite and no deploy command to run.
-- After pushing, check the page at https://heartline.productions/<page>.html.
+- After pushing, check the page at https://heartline.productions/<page>.
 
 ## Do not touch without being asked
 `assets/site.css`, `assets/site.js` and `assets/intro.js` hold the design, the motion and the logo opening for every page. Change them only when the request is explicitly about design or motion, and say what will change first.

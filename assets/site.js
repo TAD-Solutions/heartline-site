@@ -37,7 +37,7 @@
   }
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
-  var path = location.pathname.split('/').pop() || 'home.html';
+  var path = location.pathname.replace(/\.html$/, '').replace(/\/$/, '') || '/';
   document.querySelectorAll('.nav a, .mobile-menu nav a').forEach(function (a) {
     if (a.getAttribute('href') === path) a.setAttribute('aria-current', 'page');
   });
