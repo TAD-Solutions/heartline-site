@@ -59,7 +59,7 @@
 
   /* cursor */
   var cursor = document.querySelector('.cursor');
-  if (cursor && fine && !reduce) {
+  if (false && cursor && fine && !reduce) { /* custom cursor retired 13 Sep 2026 */
     document.body.classList.add('has-cursor');
     var dot = cursor.querySelector('.cursor-dot'), ring = cursor.querySelector('.cursor-ring'), label = cursor.querySelector('.cursor-label');
     var mx = -100, my = -100, rx = -100, ry = -100;
