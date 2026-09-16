@@ -166,7 +166,7 @@ html.no-motion .marquee-track{animation:none}
 /* footer */
 .site-footer{padding:var(--sec) 0 40px;border-top:1px solid var(--line);position:relative}
 .footer-title{font-size:clamp(48px,7.6vw,112px);line-height:1;max-width:14ch}
-.footer-actions{display:flex;flex-wrap:wrap;gap:16px;margin-top:48px}
+.footer-actions{display:flex;flex-wrap:wrap;align-items:center;gap:28px;margin-top:48px}
 .footer-grid{display:grid;gap:40px;margin-top:120px;padding-top:56px;border-top:1px solid var(--line)}
 @media(min-width:760px){.footer-grid{grid-template-columns:1.6fr 1fr 1fr 1fr}}
 .footer-brand img{height:160px;width:auto}
