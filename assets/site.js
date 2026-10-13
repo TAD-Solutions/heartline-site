@@ -114,6 +114,7 @@
     });
     document.querySelectorAll('.reveal').forEach(function (el) {
       if (el.closest('.reveal-group')) return;
+      if (window.HL_INTRO && el.closest('.hero')) return;
       gsap.to(el, { opacity: 1, y: 0, duration: 1, ease: 'power3.out',
         scrollTrigger: { trigger: el, start: 'top 85%', once: true } });
     });
@@ -124,17 +125,22 @@
       var l1 = h1 && h1.querySelector('.l1'), l2 = h1 && h1.querySelector('.l2');
       var T = window.HL_INTRO; /* set by intro.js on the home page when the logo opening plays */
       if (T && l1) {
-        /* gentle hero reveal after the intro opening */
+        /* gentle hero reveal — setTimeout for delays so timing survives background-tab throttling */
         var targets = [hero.querySelector('.label'), l1, hero.querySelector('.hero-actions')].filter(Boolean);
         if (l2) targets.push(l2);
         gsap.set(targets, { opacity: 0, y: 20 });
         gsap.set(hero.querySelector('.rule'), { width: 0 });
-        var tl = gsap.timeline();
-        tl.to(hero.querySelector('.label'), { opacity: 1, y: 0, duration: 1.2, ease: 'power2.out' }, T.h1)
-          .to(l1, { opacity: 1, y: 0, duration: 1.2, ease: 'power2.out' }, T.h2);
-        if (l2) tl.to(l2, { opacity: 1, y: 0, duration: 1.2, ease: 'power2.out' }, T.h2 + 0.3);
-        tl.to(hero.querySelector('.rule'), { width: 140, duration: 0.8, ease: 'power3.inOut' }, T.rest)
-          .to(hero.querySelector('.hero-actions'), { opacity: 1, y: 0, duration: 1.0, ease: 'power2.out' }, T.rest + 0.3);
+        setTimeout(function () {
+          gsap.to(hero.querySelector('.label'), { opacity: 1, y: 0, duration: 1.2, ease: 'power2.out' });
+        }, T.h1 * 1000);
+        setTimeout(function () {
+          gsap.to(l1, { opacity: 1, y: 0, duration: 1.2, ease: 'power2.out' });
+          if (l2) gsap.to(l2, { opacity: 1, y: 0, duration: 1.2, ease: 'power2.out', delay: 0.3 });
+        }, T.h2 * 1000);
+        setTimeout(function () {
+          gsap.to(hero.querySelector('.rule'), { width: 140, duration: 0.8, ease: 'power3.inOut' });
+          gsap.to(hero.querySelector('.hero-actions'), { opacity: 1, y: 0, duration: 1.0, ease: 'power2.out', delay: 0.3 });
+        }, T.rest * 1000);
       } else {
         if (h1 && !h1.querySelector('.word')) {
           h1.querySelectorAll('.l1, .l2').forEach(function (line) {
@@ -149,7 +155,11 @@
           .to(hero.querySelector('.hero-actions'), { opacity: 1, duration: 0.8 }, '-=0.6');
       }
       var media = hero.querySelector('.hero-media video, .hero-media img');
-      if (media) gsap.to(media, { scale: 1, duration: 6, ease: 'power2.out', delay: T ? T.film : 0 });
+      if (media && T) {
+        setTimeout(function () { gsap.to(media, { scale: 1, duration: 6, ease: 'power2.out' }); }, T.film * 1000);
+      } else if (media) {
+        gsap.to(media, { scale: 1, duration: 6, ease: 'power2.out' });
+      }
       gsap.to(hero.querySelector('.hero-inner'), { y: 80, opacity: 0.2, ease: 'none',
         scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: true } });
     }
