@@ -80,17 +80,6 @@
     document.addEventListener('mouseleave', function () { mx = my = -100; });
   }
 
-  /* magnetic buttons */
-  if (fine && !reduce) {
-    document.querySelectorAll('.btn').forEach(function (b) {
-      b.addEventListener('mousemove', function (e) {
-        var r = b.getBoundingClientRect();
-        var x = (e.clientX - r.left - r.width / 2) / r.width, y = (e.clientY - r.top - r.height / 2) / r.height;
-        b.style.transform = 'translate(' + x * 8 + 'px,' + y * 8 + 'px)';
-      });
-      b.addEventListener('mouseleave', function () { b.style.transform = ''; });
-    });
-  }
 
   /* reveals */
   function splitLines(el) {

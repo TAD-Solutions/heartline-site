@@ -39,7 +39,7 @@ p.lead{color:var(--ink);font-size:clamp(19px,1.6vw,24px)}
 .ink{color:var(--ink)}
 
 /* buttons */
-.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:12px;border:1px solid var(--ink);border-radius:999px;padding:18px 34px;font:600 16px var(--caps);color:var(--ink);letter-spacing:.02em;transition:color .35s var(--ease),background-color .35s var(--ease),transform .5s var(--ease);will-change:transform;white-space:nowrap}
+.btn{position:relative;display:inline-flex;align-items:center;justify-content:center;gap:12px;border:1px solid var(--ink);border-radius:999px;padding:18px 34px;font:600 16px var(--caps);color:var(--ink);letter-spacing:.02em;transition:color .35s var(--ease),background-color .35s var(--ease),border-color .35s var(--ease);white-space:nowrap}
 .btn:hover{background:var(--ink);color:#0B0B0C}
 .btn.small{padding:12px 22px;font-size:14px}
 .btn.pink{background:var(--pink);border-color:var(--pink);color:var(--navy)}
@@ -165,7 +165,7 @@ html.no-motion .marquee-track{animation:none}
 
 /* footer */
 .site-footer{padding:var(--sec) 0 40px;border-top:1px solid var(--line);position:relative}
-.footer-title{font-size:clamp(48px,7.6vw,112px);line-height:1;max-width:14ch}
+.footer-title{font-size:clamp(48px,7.6vw,112px);line-height:1;max-width:14ch;font-style:normal}
 .footer-actions{display:flex;flex-wrap:wrap;align-items:center;gap:28px;margin-top:48px}
 .footer-grid{display:grid;gap:40px;margin-top:120px;padding-top:56px;border-top:1px solid var(--line)}
 @media(min-width:760px){.footer-grid{grid-template-columns:1.6fr 1fr 1fr 1fr}}
