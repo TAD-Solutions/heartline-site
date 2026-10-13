@@ -123,17 +123,18 @@
       var h1 = hero.querySelector('h1');
       var l1 = h1 && h1.querySelector('.l1'), l2 = h1 && h1.querySelector('.l2');
       var T = window.HL_INTRO; /* set by intro.js on the home page when the logo opening plays */
-      if (T && l1 && l2) {
-        /* two-beat headline after the logo opening */
-        gsap.set([hero.querySelector('.label'), l1, l2, hero.querySelector('.hero-sub'), hero.querySelector('.hero-actions')], { opacity: 0, y: 40 });
+      if (T && l1) {
+        /* gentle hero reveal after the intro opening */
+        var targets = [hero.querySelector('.label'), l1, hero.querySelector('.hero-actions')].filter(Boolean);
+        if (l2) targets.push(l2);
+        gsap.set(targets, { opacity: 0, y: 20 });
         gsap.set(hero.querySelector('.rule'), { width: 0 });
         var tl = gsap.timeline();
-        tl.to(hero.querySelector('.label'), { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out' }, T.h1)
-          .to(l1, { opacity: 1, y: 0, duration: 1.0, ease: 'power3.out' }, T.h1)
-          .to(l2, { opacity: 1, y: 0, duration: 1.0, ease: 'power3.out' }, T.h2)
-          .to(hero.querySelector('.rule'), { width: 140, duration: 0.8, ease: 'power3.inOut' }, T.rest)
-          .to(hero.querySelector('.hero-sub'), { opacity: 1, y: 0, duration: 0.9 }, T.rest + 0.1)
-          .to(hero.querySelector('.hero-actions'), { opacity: 1, y: 0, duration: 0.9 }, T.rest + 0.2);
+        tl.to(hero.querySelector('.label'), { opacity: 1, y: 0, duration: 1.2, ease: 'power2.out' }, T.h1)
+          .to(l1, { opacity: 1, y: 0, duration: 1.2, ease: 'power2.out' }, T.h2);
+        if (l2) tl.to(l2, { opacity: 1, y: 0, duration: 1.2, ease: 'power2.out' }, T.h2 + 0.3);
+        tl.to(hero.querySelector('.rule'), { width: 140, duration: 0.8, ease: 'power3.inOut' }, T.rest)
+          .to(hero.querySelector('.hero-actions'), { opacity: 1, y: 0, duration: 1.0, ease: 'power2.out' }, T.rest + 0.3);
       } else {
         if (h1 && !h1.querySelector('.word')) {
           h1.querySelectorAll('.l1, .l2').forEach(function (line) {
