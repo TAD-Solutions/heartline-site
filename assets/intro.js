@@ -5,7 +5,7 @@
   if (!intro) return;
   if (!root.classList.contains('intro-active')) { intro.classList.add('is-done'); return; }
   try { sessionStorage.setItem('hl-intro', '1'); } catch (e) {}
-  window.HL_INTRO = { film: 7.0, h1: 8.0, h2: 9.5, rest: 11.0 };
+  window.HL_INTRO = { film: 7.0, h1: 8.0, h2: 8.6, rest: 9.2 };
   document.body.style.overflow = 'hidden';
 
   var E = 'cubic-bezier(.4,0,.2,1)';

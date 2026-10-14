@@ -133,16 +133,16 @@
         gsap.set(targets, { opacity: 0, y: 20 });
         gsap.set(hero.querySelector('.rule'), { width: 0 });
         setTimeout(function () {
-          gsap.to(hero.querySelector('.label'), { opacity: 1, y: 0, duration: 1.2, ease: 'power2.out' });
+          gsap.to(hero.querySelector('.label'), { opacity: 1, y: 0, duration: 1.0, ease: 'power2.out' });
         }, T.h1 * 1000);
         setTimeout(function () {
-          gsap.to(l1, { opacity: 1, y: 0, duration: 1.2, ease: 'power2.out' });
-          if (l2) gsap.to(l2, { opacity: 1, y: 0, duration: 1.2, ease: 'power2.out', delay: 0.3 });
+          gsap.to(l1, { opacity: 1, y: 0, duration: 1.0, ease: 'power2.out' });
+          if (l2) gsap.to(l2, { opacity: 1, y: 0, duration: 1.0, ease: 'power2.out', delay: 0.2 });
         }, T.h2 * 1000);
         setTimeout(function () {
-          gsap.to(hero.querySelector('.rule'), { width: 140, duration: 0.8, ease: 'power3.inOut' });
-          gsap.to(btn, { opacity: 1, y: 0, duration: 1.0, ease: 'power2.out', delay: 0.3 });
-          gsap.to(link, { opacity: 1, y: 0, duration: 1.0, ease: 'power2.out', delay: 0.8 });
+          gsap.to(hero.querySelector('.rule'), { width: 140, duration: 0.6, ease: 'power3.inOut' });
+          gsap.to(btn, { opacity: 1, y: 0, duration: 0.9, ease: 'power2.out', delay: 0.15 });
+          gsap.to(link, { opacity: 1, y: 0, duration: 0.9, ease: 'power2.out', delay: 0.4 });
         }, T.rest * 1000);
       } else {
         if (h1 && !h1.querySelector('.word')) {
