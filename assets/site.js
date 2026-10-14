@@ -126,7 +126,9 @@
       var T = window.HL_INTRO; /* set by intro.js on the home page when the logo opening plays */
       if (T && l1) {
         /* gentle hero reveal — setTimeout for delays so timing survives background-tab throttling */
-        var targets = [hero.querySelector('.label'), l1, hero.querySelector('.hero-actions')].filter(Boolean);
+        var btn = hero.querySelector('.hero-actions .btn');
+        var link = hero.querySelector('.hero-actions .text-link');
+        var targets = [hero.querySelector('.label'), l1, btn, link].filter(Boolean);
         if (l2) targets.push(l2);
         gsap.set(targets, { opacity: 0, y: 20 });
         gsap.set(hero.querySelector('.rule'), { width: 0 });
@@ -139,7 +141,8 @@
         }, T.h2 * 1000);
         setTimeout(function () {
           gsap.to(hero.querySelector('.rule'), { width: 140, duration: 0.8, ease: 'power3.inOut' });
-          gsap.to(hero.querySelector('.hero-actions'), { opacity: 1, y: 0, duration: 1.0, ease: 'power2.out', delay: 0.3 });
+          gsap.to(btn, { opacity: 1, y: 0, duration: 1.0, ease: 'power2.out', delay: 0.3 });
+          gsap.to(link, { opacity: 1, y: 0, duration: 1.0, ease: 'power2.out', delay: 0.8 });
         }, T.rest * 1000);
       } else {
         if (h1 && !h1.querySelector('.word')) {
