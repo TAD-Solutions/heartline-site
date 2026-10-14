@@ -203,4 +203,3 @@ html.intro-active #intro{display:flex}
 .intro-wash{position:absolute;inset:0;background:radial-gradient(circle at 50% 45%,rgba(255,225,170,.95) 0%,rgba(233,184,114,.75) 22%,rgba(233,184,114,0) 60%);opacity:0;transform-origin:center}
 html.intro-pending .site-header .logo img{opacity:0}
 .hero h1 .l1,.hero h1 .l2{display:block}
-html.intro-active .hero .label,html.intro-active .hero h1 .l1,html.intro-active .hero h1 .l2,html.intro-active .hero .rule,html.intro-active .hero-sub,html.intro-active .hero-actions{opacity:0}

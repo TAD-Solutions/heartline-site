@@ -114,7 +114,6 @@
     });
     document.querySelectorAll('.reveal').forEach(function (el) {
       if (el.closest('.reveal-group')) return;
-      if (window.HL_INTRO && el.closest('.hero')) return;
       gsap.to(el, { opacity: 1, y: 0, duration: 1, ease: 'power3.out',
         scrollTrigger: { trigger: el, start: 'top 85%', once: true } });
     });
@@ -123,46 +122,18 @@
     if (hero) {
       var h1 = hero.querySelector('h1');
       var l1 = h1 && h1.querySelector('.l1'), l2 = h1 && h1.querySelector('.l2');
-      var T = window.HL_INTRO; /* set by intro.js on the home page when the logo opening plays */
-      if (T && l1) {
-        /* gentle hero reveal — setTimeout for delays so timing survives background-tab throttling */
-        var btn = hero.querySelector('.hero-actions .btn');
-        var link = hero.querySelector('.hero-actions .text-link');
-        var targets = [hero.querySelector('.label'), l1, btn, link].filter(Boolean);
-        if (l2) targets.push(l2);
-        gsap.set(targets, { opacity: 0, y: 20 });
-        gsap.set(hero.querySelector('.rule'), { width: 0 });
-        setTimeout(function () {
-          gsap.to(hero.querySelector('.label'), { opacity: 1, y: 0, duration: 1.0, ease: 'power2.out' });
-        }, T.h1 * 1000);
-        setTimeout(function () {
-          gsap.to(l1, { opacity: 1, y: 0, duration: 1.0, ease: 'power2.out' });
-          if (l2) gsap.to(l2, { opacity: 1, y: 0, duration: 1.0, ease: 'power2.out', delay: 0.2 });
-        }, T.h2 * 1000);
-        setTimeout(function () {
-          gsap.to(hero.querySelector('.rule'), { width: 140, duration: 0.6, ease: 'power3.inOut' });
-          gsap.to(btn, { opacity: 1, y: 0, duration: 0.9, ease: 'power2.out', delay: 0.15 });
-          gsap.to(link, { opacity: 1, y: 0, duration: 0.9, ease: 'power2.out', delay: 0.4 });
-        }, T.rest * 1000);
-      } else {
-        if (h1 && !h1.querySelector('.word')) {
-          h1.querySelectorAll('.l1, .l2').forEach(function (line) {
-            line.innerHTML = line.textContent.trim().split(/\s+/).map(function (w) { return '<span class="word">' + w + '</span>'; }).join(' ');
-          });
-          if (!l1) h1.innerHTML = h1.textContent.trim().split(/\s+/).map(function (w) { return '<span class="word">' + w + '</span>'; }).join(' ');
-        }
-        var tl = gsap.timeline({ delay: 0.2 });
-        tl.to(hero.querySelectorAll('.word'), { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out', stagger: 0.06 })
-          .to(hero.querySelector('.rule'), { width: 140, duration: 0.8, ease: 'power3.inOut' }, '-=0.3')
-          .to(hero.querySelector('.hero-sub'), { opacity: 1, duration: 0.8 }, '-=0.4')
-          .to(hero.querySelector('.hero-actions'), { opacity: 1, duration: 0.8 }, '-=0.6');
+      if (h1 && !h1.querySelector('.word')) {
+        h1.querySelectorAll('.l1, .l2').forEach(function (line) {
+          line.innerHTML = line.textContent.trim().split(/\s+/).map(function (w) { return '<span class="word">' + w + '</span>'; }).join(' ');
+        });
+        if (!l1) h1.innerHTML = h1.textContent.trim().split(/\s+/).map(function (w) { return '<span class="word">' + w + '</span>'; }).join(' ');
       }
+      var tl = gsap.timeline({ delay: 0.2 });
+      tl.to(hero.querySelectorAll('.word'), { opacity: 1, y: 0, duration: 0.9, ease: 'power3.out', stagger: 0.06 })
+        .to(hero.querySelector('.rule'), { width: 140, duration: 0.8, ease: 'power3.inOut' }, '-=0.3')
+        .to(hero.querySelector('.hero-actions'), { opacity: 1, duration: 0.8 }, '-=0.6');
       var media = hero.querySelector('.hero-media video, .hero-media img');
-      if (media && T) {
-        setTimeout(function () { gsap.to(media, { scale: 1, duration: 6, ease: 'power2.out' }); }, T.film * 1000);
-      } else if (media) {
-        gsap.to(media, { scale: 1, duration: 6, ease: 'power2.out' });
-      }
+      if (media) gsap.to(media, { scale: 1, duration: 6, ease: 'power2.out' });
       gsap.to(hero.querySelector('.hero-inner'), { y: 80, opacity: 0.2, ease: 'none',
         scrollTrigger: { trigger: hero, start: 'top top', end: 'bottom top', scrub: true } });
     }
