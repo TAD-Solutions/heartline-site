@@ -24,13 +24,14 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 section{padding:var(--sec) 0;position:relative}
 section+section{border-top:1px solid var(--line)}
 h1,h2,h3,.serif{font-family:var(--serif);font-weight:400;font-style:italic;color:var(--ink);letter-spacing:-.01em}
-h1{font-size:clamp(56px,10.4vw,150px);line-height:.98}
-h2{font-size:clamp(40px,5.6vw,84px);line-height:1.02}
+h1{font-family:'Cormorant','Cormorant Garamond',Georgia,serif;font-weight:600;font-style:normal;font-size:clamp(56px,10.4vw,150px);line-height:.98;letter-spacing:.01em}
+h2{font-family:'Cormorant','Cormorant Garamond',Georgia,serif;font-weight:600;font-style:normal;font-size:clamp(40px,5.6vw,84px);line-height:1.02;letter-spacing:.01em}
 h3{font-size:clamp(28px,3vw,44px);line-height:1.1}
-.statement{font-family:var(--serif);font-style:italic;font-size:clamp(28px,3vw,44px);line-height:1.25;color:var(--ink)}
+.statement{font-family:'Cormorant','Cormorant Garamond',Georgia,serif;font-weight:600;font-style:normal;font-size:clamp(30px,3.2vw,48px);line-height:1.25;letter-spacing:.01em;color:var(--ink)}
 p.lead{color:var(--ink);font-size:clamp(19px,1.6vw,24px)}
-.label{font:600 13px var(--caps);letter-spacing:.3em;text-transform:uppercase;color:var(--pink);margin-bottom:28px}
+.label{font:600 24px var(--caps);letter-spacing:.2em;text-transform:uppercase;color:var(--pink);margin-bottom:28px}
 .label.muted{color:var(--ink-40)}
+.footer-col .label,.channel .label,span.label,cite.label{font-size:13px;letter-spacing:.3em}
 .rule{width:140px;height:1px;background:var(--pink);margin:36px 0}
 .rule.center{margin-left:auto;margin-right:auto}
 .tag{display:inline-block;font:600 11px var(--caps);letter-spacing:.24em;text-transform:uppercase;color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:8px 14px}
@@ -146,7 +147,7 @@ html.no-motion .marquee-track{animation:none}
 .list li{padding:22px 0;border-top:1px solid var(--line);display:flex;gap:24px;align-items:baseline}
 .list li:last-child{border-bottom:1px solid var(--line)}
 .list .n{font:600 12px var(--caps);letter-spacing:.24em;color:var(--pink);min-width:36px}
-.list .t{font:400 italic clamp(22px,2vw,30px)/1.2 var(--serif);color:var(--ink)}
+.list .t{font-family:'Cormorant','Cormorant Garamond',Georgia,serif;font-weight:600;font-style:normal;font-size:clamp(30px,3.2vw,48px);line-height:1.25;letter-spacing:.01em;color:var(--ink)}
 
 /* forms */
 .form{display:grid;gap:22px}
