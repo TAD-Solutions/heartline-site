@@ -25,10 +25,19 @@ This repo is the live website at https://heartline.productions. It is static HTM
 `assets/site.css`, `assets/site.js` and `assets/intro.js` hold the design, the motion and the logo opening for every page. Change them only when the request is explicitly about design or motion, and say what will change first.
 
 ## Brand rules
-- Navy ink #1A306F, pink #F07BA8, cream #F5EFE6, black #0B0B0C. Headlines are Cormorant Garamond italic, body is Inter, labels are Poppins caps.
+- Navy ink #1A306F, pink #F07BA8, cream #F5EFE6, black #0B0B0C.
 - Never put navy ink alone on black. The logo files in `assets/` are final; do not recolour them.
 - No prices anywhere on the site. Corporate films carry a "Coming soon" tag.
 - Never use the em dash character; use a hyphen. Placeholders in form fields are short examples, never instructions.
+
+## Typography
+One system shared by every page, set in `assets/site.css`. Change it there so the pages stay in step; per-page overrides belong in that page's `<style>` block and must say which section they apply to.
+- Headings, statements and list titles: Cormorant 600 upright. Not italic.
+- Body and description copy: Rubik 400, clamp(15px,1.4vw,18px), line-height 1.65, colour rgba(255,255,255,.78).
+- Section eyebrows (`p.label`): Poppins 600, 24px, track .2em, uppercase, pink. Inline labels (`span.label`, `cite.label`, footer columns, contact channels) stay 13px at track .3em; keep them small or they compete with the copy.
+- Homepage hero headline: Josefin Sans 400.
+- Services list titles (`#services .list .t`, overridden in `home.html`): Poppins 500, clamp(22px,3.2vw,34px) so it reads 34px at the 1320px wrap, track .16em, uppercase, white. Picked from a font options comparison on 2026-10-15; the clamp floor of 22px is what keeps "Corporate films" on one line at 375px.
+- Google Fonts links must match across pages. Every page loads Cormorant Garamond, Cormorant 600, Inter 300/400/500, Poppins 500/600, Josefin Sans and Rubik.
 
 ## Media
 - Photos go in `media/`, under 1 MB each, referenced by filename. Expected: `media/portrait-rania.jpg` (4:5), `media/team-1.jpg` and `media/team-2.jpg` (3:2). Remove the `awaiting` class and the "Photo to be added" tag from the frame when the photo lands.
